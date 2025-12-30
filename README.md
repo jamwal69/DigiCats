@@ -231,17 +231,25 @@ DigiCats/
 
 ## 🎨 Screenshots
 
-### Dashboard
-*Manage your collection, mint new cats, and track your stats*
+### 🏠 Home Dashboard
+*Collect adorable digital cats, view your collection, and claim free KITTY tokens*
 
-### Marketplace
-*Buy and sell cats with other players*
+![Home Dashboard](screenshots/home.png)
 
-### Battle Arena
-*Challenge others to strategic turn-based combat*
+### 😺 My Cats Collection
+*View all your DigiCats with their unique traits, stats, and rarity levels*
 
-### Staking
-*Earn passive KITTY token rewards*
+![My Cats](screenshots/my-cats.png)
+
+### 🧬 Breeding Lab
+*Combine traits from two cats to create unique offspring with trait predictions*
+
+![Breeding Lab](screenshots/breeding.png)
+
+### 💎 Staking Vault
+*Stake your cats to earn passive KITTY token rewards with rarity multipliers*
+
+![Staking Vault](screenshots/staking.png)
 
 ---
 
