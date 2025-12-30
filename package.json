@@ -1,0 +1,40 @@
+{
+  "name": "digi-cats",
+  "version": "1.0.0",
+  "description": "DigiCats - A blockchain-based digital pet breeding game",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy:mumbai": "npx hardhat run scripts/deploy.ts --network polygon-mumbai",
+    "deploy:local": "npx hardhat run scripts/deploy.ts --network localhost",
+    "mint": "npx hardhat run scripts/mint.ts --network polygon-mumbai",
+    "node": "npx hardhat node",
+    "verify": "npx hardhat verify --network polygon-mumbai",
+    "frontend:start": "cd frontend && npm start",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:install": "cd frontend && npm install",
+    "dev": "npm run node"
+  },
+  "keywords": [
+    "blockchain",
+    "nft",
+    "gaming",
+    "ethereum",
+    "polygon",
+    "breeding",
+    "cryptokitties"
+  ],
+  "author": "CryptoKitties Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@nomicfoundation/hardhat-verify": "^2.1.0",
+    "hardhat": "^2.26.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "dotenv": "^17.2.0",
+    "ethers": "^6.15.0"
+  }
+}

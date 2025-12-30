@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DigiCats Kawaii Design System - All colors in HSL */
+
+@layer base {
+  :root {
+    /* Kawaii Color Palette */
+    --background: 280 30% 98%;
+    --foreground: 280 50% 15%;
+
+    --card: 280 40% 99%;
+    --card-foreground: 280 50% 15%;
+
+    --popover: 280 40% 99%;
+    --popover-foreground: 280 50% 15%;
+
+    /* Primary - Sakura Pink */
+    --primary: 330 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Lavender */
+    --secondary: 270 50% 85%;
+    --secondary-foreground: 280 50% 25%;
+
+    /* Muted - Soft Gray Lavender */
+    --muted: 270 20% 92%;
+    --muted-foreground: 280 15% 45%;
+
+    /* Accent - Mint */
+    --accent: 160 50% 75%;
+    --accent-foreground: 160 60% 20%;
+
+    /* Destructive */
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 280 25% 88%;
+    --input: 280 25% 88%;
+    --ring: 330 70% 65%;
+
+    --radius: 1rem;
+
+    /* Custom Kawaii Colors */
+    --kawaii-pink: 330 70% 65%;
+    --kawaii-purple: 280 60% 65%;
+    --kawaii-blue: 210 70% 70%;
+    --kawaii-mint: 160 50% 70%;
+    --kawaii-peach: 20 80% 80%;
+    --kawaii-yellow: 45 90% 75%;
+    --kawaii-coral: 10 80% 70%;
+
+    /* Rarity Colors */
+    --rarity-common: 210 20% 60%;
+    --rarity-uncommon: 140 50% 50%;
+    --rarity-rare: 210 80% 60%;
+    --rarity-epic: 280 70% 60%;
+    --rarity-legendary: 45 100% 55%;
+
+    /* Gradients */
+    --gradient-kawaii: linear-gradient(135deg, hsl(330 70% 65%), hsl(280 60% 65%));
+    --gradient-hero: linear-gradient(180deg, hsl(280 30% 98%) 0%, hsl(330 40% 95%) 50%, hsl(280 40% 92%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(280 40% 99%) 0%, hsl(330 30% 97%) 100%);
+    --gradient-legendary: linear-gradient(135deg, hsl(45 100% 60%), hsl(30 100% 65%), hsl(45 100% 55%));
+
+    /* Shadows */
+    --shadow-kawaii: 0 8px 32px -8px hsl(330 70% 65% / 0.3);
+    --shadow-card: 0 4px 24px -4px hsl(280 50% 50% / 0.15);
+    --shadow-glow: 0 0 40px hsl(330 70% 65% / 0.4);
+
+    /* Sidebar */
+    --sidebar-background: 280 30% 97%;
+    --sidebar-foreground: 280 50% 25%;
+    --sidebar-primary: 330 70% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 40% 92%;
+    --sidebar-accent-foreground: 280 50% 25%;
+    --sidebar-border: 280 25% 90%;
+    --sidebar-ring: 330 70% 65%;
+  }
+
+  .dark {
+    --background: 280 30% 8%;
+    --foreground: 280 20% 95%;
+
+    --card: 280 35% 12%;
+    --card-foreground: 280 20% 95%;
+
+    --popover: 280 35% 12%;
+    --popover-foreground: 280 20% 95%;
+
+    --primary: 330 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 40% 25%;
+    --secondary-foreground: 280 20% 95%;
+
+    --muted: 280 30% 18%;
+    --muted-foreground: 280 15% 65%;
+
+    --accent: 160 40% 35%;
+    --accent-foreground: 160 20% 95%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 30% 20%;
+    --input: 280 30% 20%;
+    --ring: 330 70% 60%;
+
+    --gradient-hero: linear-gradient(180deg, hsl(280 30% 8%) 0%, hsl(300 40% 12%) 50%, hsl(280 35% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(280 35% 14%) 0%, hsl(300 30% 10%) 100%);
+
+    --shadow-kawaii: 0 8px 32px -8px hsl(330 70% 50% / 0.4);
+    --shadow-card: 0 4px 24px -4px hsl(280 50% 30% / 0.3);
+
+    --sidebar-background: 280 30% 10%;
+    --sidebar-foreground: 280 20% 90%;
+    --sidebar-primary: 330 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 280 35% 18%;
+    --sidebar-accent-foreground: 280 20% 90%;
+    --sidebar-border: 280 30% 18%;
+    --sidebar-ring: 330 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/40 rounded-full hover:bg-primary/60 transition-colors;
+  }
+}
+
+@layer components {
+  /* Kawaii Card Styles */
+  .kawaii-card {
+    @apply relative overflow-hidden rounded-2xl border border-border/50;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .kawaii-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-50;
+    background: radial-gradient(ellipse at top, hsl(var(--primary) / 0.1), transparent 70%);
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply backdrop-blur-xl bg-card/80 border border-border/30;
+  }
+
+  /* Holographic effect */
+  .holographic {
+    background: linear-gradient(
+      135deg,
+      hsl(330 70% 65% / 0.1),
+      hsl(280 60% 65% / 0.1),
+      hsl(210 70% 70% / 0.1),
+      hsl(160 50% 70% / 0.1)
+    );
+    background-size: 400% 400%;
+    animation: holographic-shift 8s ease infinite;
+  }
+
+  @keyframes holographic-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Rarity badges */
+  .rarity-common { @apply bg-muted text-muted-foreground; }
+  .rarity-uncommon { 
+    background: hsl(var(--rarity-uncommon)); 
+    @apply text-white;
+  }
+  .rarity-rare { 
+    background: hsl(var(--rarity-rare)); 
+    @apply text-white;
+  }
+  .rarity-epic { 
+    background: hsl(var(--rarity-epic)); 
+    @apply text-white;
+  }
+  .rarity-legendary { 
+    background: var(--gradient-legendary);
+    @apply text-foreground font-bold;
+    animation: legendary-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes legendary-glow {
+    from { box-shadow: 0 0 10px hsl(45 100% 55% / 0.5); }
+    to { box-shadow: 0 0 25px hsl(45 100% 55% / 0.8); }
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Sparkle effect */
+  .sparkle {
+    position: relative;
+  }
+
+  .sparkle::after {
+    content: '✨';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 1rem;
+    animation: sparkle-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes sparkle-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-kawaii);
+  }
+
+  /* Stat bar animations */
+  .stat-bar {
+    @apply h-2 rounded-full overflow-hidden bg-muted;
+  }
+
+  .stat-bar-fill {
+    @apply h-full rounded-full transition-all duration-700 ease-out;
+  }
+
+  /* Button glow on hover */
+  .btn-glow {
+    @apply relative overflow-hidden;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .btn-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Card tilt container */
+  .tilt-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  /* Pulse ring animation */
+  .pulse-ring {
+    @apply relative;
+  }
+
+  .pulse-ring::before {
+    content: '';
+    @apply absolute inset-0 rounded-full;
+    background: hsl(var(--primary) / 0.4);
+    animation: pulse-ring-anim 2s ease-out infinite;
+  }
+
+  @keyframes pulse-ring-anim {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-1000 { animation-delay: 1000ms; }
+}

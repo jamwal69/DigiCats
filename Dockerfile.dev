@@ -1,0 +1,20 @@
+# Development Dockerfile
+FROM node:18-alpine AS development
+
+WORKDIR /app
+
+# Install dependencies
+COPY package*.json ./
+COPY frontend/package*.json ./frontend/
+RUN npm ci
+RUN cd frontend && npm ci
+
+# Copy source code
+COPY . .
+
+# Expose port
+EXPOSE 3000
+
+# Start development server
+WORKDIR /app/frontend
+CMD ["npm", "start"]

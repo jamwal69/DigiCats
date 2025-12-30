@@ -1,0 +1,10 @@
+{
+  "KittyToken": "0x43dBDc57206B3C16c01d0da91dE113B2ffE5bB89",
+  "DigiCats": "0xba9847de247D2930bc8CFD9CfB26fa4e3b93cF59",
+  "KittyMarketplace": "0xA2e26014B850684aB4026b9dfCB8aeBeDED018F9",
+  "KittyBattle": "0x2eF7CE17630bcADAdC28EF8cf846DD6dB30B842F",
+  "KittyStaking": "0x7BE33aABB8AD08541586696e975fC0299a43fc0A",
+  "deployer": "0xE02e75c29816858C9AB36623410132Feb9aEA689",
+  "network": "sepolia",
+  "deployedAt": "2025-07-19T17:10:57.043Z"
+}
